@@ -1,3 +1,5 @@
+//用的是动态开辟节点充当货物
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
