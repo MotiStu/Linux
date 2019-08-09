@@ -25,7 +25,7 @@ sem_t g_sem_empty;  //空信号量
 pthread_mutex_t g_mutex; // 锁
 pthread_t g_thread[CONSUMERS_COUNT+PRODUCERS_COUNT];
 
-void* consume(void *arg)
+void* consume(void *arg)//消费者
 {
 
 	int i;
@@ -60,7 +60,7 @@ void* consume(void *arg)
 	}
 	return NULL;
 }
-void* produce(void *arg)
+void* produce(void *arg)//生产者
 {
 
 	int i;
