@@ -35,7 +35,7 @@ void* consume(void *arg)
 	{
 
 		printf("%d wait buffer not empty\n", num);
-		sem_wait(&g_sem_empty);
+		sem_wait(&g_sem_empty);//--
 		pthread_mutex_lock(&g_mutex);
 		for (i=0; i<BUFFSIZE; i++)
 		{
@@ -55,7 +55,7 @@ void* consume(void *arg)
 		out = (out + 1) % BUFFSIZE;
 		printf("%d end consume product %d\n", num, consume_id);
 		pthread_mutex_unlock(&g_mutex);
-		sem_post(&g_sem_full);
+		sem_post(&g_sem_full);//++
 		sleep(1);
 	}
 	return NULL;
